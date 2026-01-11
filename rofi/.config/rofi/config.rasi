@@ -1,0 +1,170 @@
+/**
+ * ROFI Layout
+ *
+ * Style 6: Straightforward vertical text and modes over a background.
+ * Attribute: rofilaunch,launcher
+ * User: The HyDE Project [ SimpleStack ]
+ * Copyright: https://github.com/prasanthrangan/hyprdots/
+ */
+
+
+// Config //
+configuration {
+    modi:                        "drun,filebrowser,window,run";
+    show-icons:                  true;
+    display-drun:                " ";
+    display-run:                 " ";
+    display-filebrowser:         " ";
+    display-window:              " ";
+    hover-select:                false;
+    drun-display-format:         "{name}";
+    window-format:               "{w}{t}";
+    me-select-entry:             "";
+    me-accept-entry:             "MousePrimary";
+    font:                        "RecMonoCasual Nerd Font Bold 12";
+    icon-theme:                  "kora";
+}
+
+@theme "~/.config/rofi/theme.rasi"
+
+
+// Main //
+window {
+    height:                      31em;
+    width:                       37em;
+    transparency:                "real";
+    fullscreen:                  false;
+    enabled:                     true;
+    cursor:                      "default";
+    spacing:                     0em;
+    padding:                     0em;
+    border-radius:               1.5em;
+    border:                      3px;
+    border-color:                #f3cad6;
+    background-color:            rgba(0,0,1,0.5);
+}
+mainbox {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0em;
+    orientation:                 horizontal;
+    children:                    [ "inputbar" , "mode-switcher" , "listbox" ];
+    background-color:            rgba(0,0,1,0.3);
+}
+
+
+// Inputs //
+inputbar {
+    width:                       0em;
+    enabled:                     true;
+    children:                    [ "entry" ];
+}
+entry {
+    enabled:                     false;
+}
+
+
+// Modes //
+mode-switcher {
+    border-radius:               1.2em;
+    width:                       9.3em;
+    margin:                      10px;
+    orientation:                 vertical;
+    enabled:                     true;
+    padding:                     4em 1.8em 4em 1.8em;
+    spacing:                     1em;
+    background-color:            rgba(0,0,1,0.2);
+    background-image:            url("/home/halcyon/Pictures/leaves-blue-3840x2160-17461 (Edited).jpeg", height);
+}
+button {
+    cursor:                      pointer;
+    border-radius:               4em;
+    background-color:            #0a0e1ae6;
+    text-color:                  #f2ecbc;
+}
+button selected {
+    border-radius:               4em;
+    background-color:            rgba(100,190,255,0.2);   /* Light glass effect */
+    border:                      2.7px;
+    border-color:                rgba(255, 255, 255, 0.35);  /* Brighter glass edge */
+    text-color:                  #FFFFFF;                     /* White text for contrast */
+}
+
+
+// Lists //
+listbox {
+    padding:                     0em;
+    spacing:                     0em;
+    orientation:                 vertical;
+    children:                    [ "dummy" , "listview" , "dummy" ];
+    background-color:            transparent;
+}
+listview {
+    padding:                     1em;
+    spacing:                     0em;
+    enabled:                     true;
+    columns:                     1;
+    lines:                       7;
+    cycle:                       false;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    expand:                      false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @main-fg;
+}
+dummy {
+    background-color:            transparent;
+}
+
+
+// Elements //
+element {
+    orientation:                 horizontal;
+    enabled:                     true;
+    spacing:                     1.5em;
+    padding:                     0.5em;
+    cursor:                      pointer;
+    background-color:            transparent;
+    // text-color:                  #FFFFFF;
+    text-color:                  #f2ecbc;
+}
+element selected.normal {
+    border-radius:               1.1em;
+    background-color:            rgba(203, 233, 241, 0.15);  /* Light blue with low opacity */
+    border:                      0px;
+    border-color:                rgba(255, 255, 255, 0.3);   /* Subtle bright border */
+    text-color:                  #FFFFFF;                     /* White text for contrast */
+}
+element-icon {
+    size:                        3em;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+element-text {
+    vertical-align:              0.5;
+    horizontal-align:            0;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+// Error message //
+error-message {
+    text-color:                  @main-fg;
+    background-color:            @main-bg;
+    text-transform:              capitalize;
+    children:                    [ "textbox" ];
+}
+
+textbox {
+    text-color:                  inherit;
+    background-color:            inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}

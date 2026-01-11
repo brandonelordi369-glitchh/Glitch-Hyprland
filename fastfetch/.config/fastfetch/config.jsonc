@@ -1,0 +1,130 @@
+/*
+HyDE provides xdg/share/fastfetch/presets/hyde/*.config.jsonc files for different layouts.
+You can also create your own config.jsonc file in the same directory to create a custom theme.
+
+To test HyDE's fastfetch theme, run:
+fastfetch --config hyde/*.jsonc
+
+*/
+{
+  // "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  // "logo": {
+  //   "source": "\"$(fastfetch.sh logo)\"",
+  //   "height": 18
+  // },
+  // "logo": {
+  //   "source": "/home/halcyon/.config/fastfetch/archhyde.png",
+  //   "height": 18
+  // },
+  "display": {
+    "separator": " : "
+  },
+  "modules": [
+    {
+      "type": "title",
+      "key": "  ",
+      "format": "{6} {7} {8}"
+    },
+    {
+      "type": "custom",
+      "format": "┌──────────────────────────────────────────┐"
+    },
+    {
+      "type": "os",
+      "key": "   ",
+     // "format": "{2}",
+      // "keyColor": "red"
+    },
+    {
+      "type": "host",
+      "key": "  󰇺 ",
+     // "format": "{2}",
+      "keyColor": "red"
+    },
+    {
+      "type": "kernel",
+      "key": "   ",
+      "format": "{2}",
+      "keyColor": "red"
+    },
+    {
+      "type": "packages",
+      "key": "  󰏖 ",
+      "keyColor": "green"
+    },
+    {
+      "type": "shell",
+      "key": "   ",
+      "keyColor": "green"
+    },
+    {
+      "type": "display",
+      "key": "  󰍹 ",
+      "format": "{1}x{2} @ {3}Hz [{7}]",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "terminal",
+      "key": "   ",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "wm",
+      "key": "  󰄛 ",
+      "format": "{2}",
+      "keyColor": "yellow"
+    },
+
+    {
+      "type": "cpu",
+      "format": "{1} @ {7}",
+      "key": "   ",
+      "keyColor": "blue"
+    },
+    {
+      "type": "gpu",
+      "format": "{2}",
+      "key": "  󰊴 ",
+      "keyColor": "blue"
+    },
+
+    {
+      "type": "memory",
+      "key": "   ",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "swap",
+      "key": "  󰾶 ",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "disk",
+      "folders": [ "/" ],
+      "key": "   ",
+      "outputFormat": "{used} / {total} ({percentage}%) - {type}"
+    },
+    {
+      "type": "disk",
+      "key": "   ",
+      "folders": "/",
+      "keyColor": "red",
+      "format": "{days} days"
+    },
+    {
+      "type": "uptime",
+      "key": "  󱫠 ",
+      "keyColor": "red"
+    },
+    {
+      "type": "custom",
+      "format": "└──────────────────────────────────────────┘"
+    },
+    {
+      "type": "colors",
+      "paddingLeft": 2,
+      "symbol": "circle"
+    },
+    "break"
+  ]
+}

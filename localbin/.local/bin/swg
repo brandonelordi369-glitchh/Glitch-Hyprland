@@ -1,0 +1,28 @@
+#!/usr/bin/env zsh
+
+# swg - Simple wallpaper changer using swww
+# Usage: swg <image_path>
+
+if [ -z "$1" ]; then
+    echo "Usage: swg <image_path>"
+    echo "Example: swg ~/Pictures/wallpaper.jpg"
+    exit 1
+fi
+
+IMAGE_PATH="$1"
+
+# Check if file exists
+if [ ! -f "$IMAGE_PATH" ]; then
+    echo "Error: File '$IMAGE_PATH' not found"
+    exit 1
+fi
+
+# Change wallpaper with swww
+swww img "$IMAGE_PATH" --transition-fps 75 --transition-type wipe
+
+if [ $? -eq 0 ]; then
+    echo "Wallpaper changed to: $IMAGE_PATH"
+else
+    echo "Error: Failed to change wallpaper"
+    exit 1
+fi

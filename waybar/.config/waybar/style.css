@@ -1,0 +1,449 @@
+/*
+ * __        __          _                  ____  _         _
+ * \ \      / /_ _ _   _| |__   __ _ _ __  / ___|| |_ _   _| | ___
+ *  \ \ /\ / / _` | | | | '_ \ / _` | '__| \___ \| __| | | | |/ _ \
+ *   \ V  V / (_| | |_| | |_) | (_| | |     ___) | |_| |_| | |  __/
+ *    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___|
+ *                 |___/                              |___/
+ *
+ * -----------------------------------------------------
+*/
+
+
+@import "colors.css";
+
+
+/* -----------------------------------------------------
+ * General
+ * ----------------------------------------------------- */
+window#waybar {
+/*     background-color: rgba(255,255,255,0.1); */
+    background-color: transparent;
+    /* Subtle text shadow */
+/*     text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3); */
+}
+
+/*window#waybar.empty {
+    background-color: transparent;
+}*/
+
+* {
+    font-family: "SF Pro Display", "Hasklug Nerd Font Propo";
+    font-weight: 500;
+    border: none;
+    border-radius: 0px;
+    font-size: 16px;
+}
+
+/*window#waybar {
+    background-color: rgba(0,0,0,0.2);
+    border-bottom: 0px solid #ffffff;
+    color: #FFFFFF;
+    transition-property: background-color;
+    transition-duration: .5s;
+}*/
+
+.modules-left {
+    padding-left:12px;
+}
+
+/* General styling for custom quick links */
+#custom-firefox {
+    color: #ff6600;
+    font-size: 16px; /* Increase icon size */
+    padding: 0px 2px; /* Add spacing around icons */
+    margin: 3px; /* Add margin to space them out */
+}
+#custom-nautilus {
+    color: #00aaff;
+    font-size: 16px; /* Increase icon size */
+    padding: 0px 2px; /* Add spacing around icons */
+    margin: 3px; /* Add margin to space them out */
+}
+#custom-missioncenter {
+    color: #9d22d6;
+    font-size: 16px; /* Increase icon size */
+    padding: 0px 2px; /* Add spacing around icons */
+    margin: 3px; /* Add margin to space them out */
+}
+#custom-localsend {
+    color: #44cc44;
+    font-size: 16px; /* Increase icon size */
+    padding: 0px 2px; /* Add spacing around icons */
+    margin: 3px; /* Add margin to space them out */
+}
+
+
+/*#custom-appmenu {
+    border: none;
+    border-radius: 0px;
+    background-color: #FBD6C8;
+    font-size: 16px;
+    color: #000000;
+    border-radius: 15px;
+    padding: 0px 10px 0px 10px;
+    margin: 8px 10px 8px 0px;
+    opacity: 0.9;
+    box-shadow: 0 0 5px 1.3px rgba(248, 233, 230, 0.6);
+    transition: background 0.3s ease-in-out;
+}
+
+#custom-appmenu:hover {
+    background: linear-gradient(135deg,
+                rgba(255, 180, 150, 0.95),
+                rgba(255, 210, 190, 0.85));
+    box-shadow: 0 8px 30px rgba(255, 120, 80, 0.8),
+                inset 0 2px 8px rgba(255, 255, 255, 0.8),
+                inset 0 -2px 8px rgba(255, 150, 120, 0.5);
+    border: 0px solid rgba(255, 255, 240, 0.9);
+}*/
+
+
+/* -----------------------------------------------------
+ * Workspaces
+ * ----------------------------------------------------- */
+
+#workspaces {
+    background: rgba(0,0,1,0.1);
+    margin: 5px 1px 6px 1px;
+/*     padding: 0px 1px; */
+    border-radius: 15px;
+    border: 0px;
+    font-weight: bold;
+    font-style: normal;
+    opacity: 0.9;
+    font-size: 16px;
+    color: #FFFFFF;
+    min-width: 12px;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 4px 3px;
+    border-radius: 15px;
+    border: 0px;
+    color: #FFFFFF;
+    background-color: #45EBEA; /*@blue;*/
+    transition: all 0.3s ease-in-out;
+    opacity: 0.4;
+    min-width: 12px;
+}
+
+#workspaces button.active {
+    color: #FFFFFF;
+    background: @sapphire;
+    border-radius: 15px;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+}
+
+#workspaces button:hover {
+    color: #FFFFFF;
+    background: #45EBEA; /*@teal;*/
+    border-radius: 15px;
+    opacity:0.7;
+}
+
+
+/* Additional Tweaks */
+
+#workspaces button.empty {
+    color: #FFFFFF;
+    background: @blue;
+}
+
+#workspaces button.empty.active {
+    color: #FFFFFF;
+    background: @sapphire;
+    border-radius: 15px;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+}
+
+#workspaces button.empty:hover {
+    color: #FFFFFF;
+    background: @teal;
+    border-radius: 15px;
+    opacity:0.7;
+}
+
+/* -----------------------------------------------------
+ * Tooltips
+ * ----------------------------------------------------- */
+
+tooltip {
+    background: rgba(0,0,2,0.7); /*#010107*/
+    border: 2px solid #121226;
+    border-radius: 16px;
+}
+
+tooltip label {
+    color: #f4f1d9;
+}
+
+/* -----------------------------------------------------
+ * Window
+ * ----------------------------------------------------- */
+
+#window {
+    background: @backgroundlight;
+    margin: 8px 15px 8px 15px;
+    padding: 2px 10px 2px 10px;
+    border-radius: 12px;
+    color:@textcolor2;
+    font-size:16px;
+    font-weight:normal;
+    opacity:0.9;
+}
+
+window#waybar.empty #window {
+    background-color:transparent;
+}
+
+/* -----------------------------------------------------
+ * Taskbar
+ * ----------------------------------------------------- */
+
+
+/* -----------------------------------------------------
+ * Modules
+ * ----------------------------------------------------- */
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/* -----------------------------------------------------
+ * Custom Quicklinks
+ * ----------------------------------------------------- */
+
+
+#custom-settings {
+    margin-right:12px;
+}
+
+#custom-tools {
+    margin-right:12px;
+}
+
+#custom-hypridle.active {
+    color: @iconcolor;
+}
+
+#custom-hypridle.notactive {
+    color: #dc2f2f;
+}
+
+
+/* -----------------------------------------------------
+ * Idle Inhibator
+ * ----------------------------------------------------- */
+
+
+/* -----------------------------------------------------
+ * Custom Modules
+ * ----------------------------------------------------- */
+
+
+/* -----------------------------------------------------
+ * Custom Notification
+ * ----------------------------------------------------- */
+
+ /*#custom-notification {
+    margin: 0px 14px 0px 10px;
+    padding:0px;
+    font-size:16px;
+    color: @iconcolor;
+    opacity: 0.8;
+}*/
+ #custom-notification {
+    padding: 1px 10px 1px 10px;
+    margin: 5px 12px 5px 1px;
+    font-size:16px;
+    color: @peach;
+    opacity: 1;
+    background: rgba(0,0,1,0.1); /*#1B1927;*/
+    border-radius: 15px;
+    transition: background 0.3s ease-in-out;
+}
+#custom-notification:hover {
+    background: rgba(0,0,1,0.1);
+}
+
+/* -----------------------------------------------------
+ * Custom Exit
+ * ----------------------------------------------------- */
+
+#custom-exit {
+    color:  #DF2782; /*#d62976;*/
+    font-size: 16px;
+    background: rgba(0,0,1,0.1); /*#1B1927;*/
+    border-radius: 15px;
+    margin-left: 1px;
+    margin-right: 7px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 1px 11px 1px 11px;
+/*     box-shadow: 0 0 3px 1.6px rgba(220, 47, 47, 0.7); */
+    transition: background 0.3s ease-in-out;
+}
+#custom-exit:hover {
+    color: #fa7e1e;
+    background: rgba(0,0,1,0.1);
+}
+
+/* -----------------------------------------------------
+ * Custom Updates
+ * ----------------------------------------------------- */
+
+/* -----------------------------------------------------
+ * Hardware Group
+ * ----------------------------------------------------- */
+
+ #disk,#memory,#cpu {
+    background-color: #191826; /*#1B1927;*/
+    margin: 5px 7px 5px 1px;
+    border-radius: 15px;
+    padding: 1px 10px 1px 10px;
+    font-size:16px;
+}
+
+
+#cpu {
+    color: @maroon;
+    border-radius: 15px 0px 0px 15px;
+    padding-left:10px;
+    margin-right:0px;
+    margin-left: 2px;
+}
+#memory {
+    color: #89b4fa;
+    border-radius: 0px 15px 15px 0px;
+    margin-left: 0px;
+}
+
+
+/* -----------------------------------------------------
+ * Power Profiles Daemon
+ * ----------------------------------------------------- */
+
+/* #power-profiles-daemon {
+    margin: 0px 13px 0px 0px;
+    padding:0px;
+    font-size:11px;
+    color:@yellow;
+}*/
+
+/* -----------------------------------------------------
+ * Clock
+ * ----------------------------------------------------- */
+
+#clock {
+    background-color: rgba(0,0,1,0.1); /*#1B1927;*/
+    font-size: 16px;
+    color: #56E6E4; /*#77DCD7;*/
+    border-radius: 15px;
+    padding: 1px 10px 1px 10px;
+    margin: 5px 4px 5px 1px;
+    transition: background 0.3s ease-in-out;
+/*     box-shadow: 0 0 5px 1.1px @teal; */
+/*     transition: box-shadow 0.3s ease-in-out; */
+/*     opacity:0.9; */
+/*     border:3px solid @bordercolor; */
+}
+
+#clock:hover {
+    background: rgba(0,0,1,0.1);
+/*     box-shadow: 0 0 5px 1.3px rgba(255, 215, 0, 0.7); */
+}
+
+/* -----------------------------------------------------
+ * Backlight
+ * ----------------------------------------------------- */
+
+ #backlight {
+    background-color: @backgroundlight;
+    font-size: 16px;
+    color: @textcolor2;
+    border-radius: 15px;
+    padding: 2px 10px 0px 10px;
+    margin: 8px 15px 8px 0px;
+    opacity:0.8;
+}
+
+/* -----------------------------------------------------
+ * Pulseaudio
+ * ----------------------------------------------------- */
+
+#pulseaudio {
+    background: rgba(0,0,1,0.1); /*#1B1927;*/
+    font-size: 15px;
+    color: #E0C677;
+    border-radius: 15px;
+    padding: 1px 10px 1px 10px;
+    margin: 5px 1px 5px 1px;
+    opacity: 1;
+/*     border:1px solid #FFFFFF; */
+    transition: background 0.3s ease-in-out;
+}
+#pulseaudio-hover:hover {
+    background: rgba(0,0,1,0.1);
+}
+#pulseaudio.muted {
+    color: #3b4252;
+/*     border-bottom: 2px solid #3b4252; */
+}
+
+/* -----------------------------------------------------
+ * Network
+ * ----------------------------------------------------- */
+
+/* -----------------------------------------------------
+ * Bluetooth
+ * ----------------------------------------------------- */
+
+ #bluetooth, #bluetooth.on, #bluetooth.connected {
+    background-color: @backgroundlight;
+    font-size: 16px;
+    color: @textcolor2;
+    border-radius: 15px;
+    padding: 2px 10px 0px 10px;
+    margin: 8px 15px 8px 0px;
+    opacity:0.8;
+}
+
+#bluetooth.off {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* -----------------------------------------------------
+ * Battery
+ * ----------------------------------------------------- */
+
+
+/* -----------------------------------------------------
+ * Tray
+ * ----------------------------------------------------- */
+
+#tray {
+    background: rgba(0,0,1,0.1); /*#1B1927;*/
+    opacity: 1.0;
+    padding: 1.5px 9px 1.5px 9px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    margin-right: 7px;
+    margin-left: 7px;
+    transition: background 0.3s ease-in-out;
+}
+#tray:hover {
+    background: rgba(0,0,1,0.1);
+}

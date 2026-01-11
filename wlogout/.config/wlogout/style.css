@@ -1,0 +1,75 @@
+* {
+    font-family: "OpenDyslexicAlt Nerd Font";
+}
+
+@define-color inverse_surface #e2e2e9;
+@define-color on_secondary_fixed_variant #404659;
+
+window {
+	background-color: rgba(0, 0, 0, 0.45)
+}
+
+button {
+	color: @inverse_surface;
+    font-size:20px;
+    outline-style: none;
+    margin: 120px 0px;
+
+    background-repeat: no-repeat;
+	background-position: center;
+	background-size: 25%;
+
+	background-color: rgba(16,18,19,0.50);
+    opacity: 0.9;
+    border: none;
+    border-radius: 0px;
+    transition: 0.15s ease-in-out all;
+}
+
+button:focus {
+    background-color: rgba(205, 214, 244, 0.2);
+    background-size: 34%;
+}
+
+button:hover,button:active {
+    background-size: 40%;
+    background-color: rgba(205, 214, 244, 0.2);
+    margin: 75px 0px;
+    border-radius: 50px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+}
+
+/* 
+----------------------------------------------------- 
+Buttons
+----------------------------------------------------- 
+*/
+
+#lock {
+    border-radius: 50px 0px 0px 50px;
+	background-image: image(url("icons/lock.png"));
+}
+#lock:hover {
+    border-radius: 50px;
+}
+
+#shutdown {
+	background-image: image(url("icons/shutdown.png"));
+}
+
+#reboot {
+	background-image: image(url("icons/reboot.png"));
+}
+
+#suspend {
+	background-image: image(url("icons/suspend.png"));
+}
+ 
+#logout {
+    border-radius: 0px 50px 50px 0px;
+	background-image: image(url("icons/logout.png"));
+}
+#logout:hover {
+    border-radius: 50px;
+}
