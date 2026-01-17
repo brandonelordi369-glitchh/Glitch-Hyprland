@@ -18,7 +18,7 @@ if [ ! -f "$IMAGE_PATH" ]; then
 fi
 
 # Change wallpaper with swww
-swww img "$IMAGE_PATH" --transition-fps 75 --transition-type wipe
+swww img "$IMAGE_PATH" --transition-fps 75 --transition-type random
 
 if [ $? -eq 0 ]; then
     echo "Wallpaper changed to: $IMAGE_PATH"
