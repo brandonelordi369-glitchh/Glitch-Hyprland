@@ -7,163 +7,220 @@
  */
 
 
-// Config //
+* {
+    background: rgba(0,0,1,0.3);
+    foreground: #000000;
+    alt-color: #111111FF;
+    color11:    #02C2BC;
+}
+
+* { border-width: 2px; }
+
+
+/* ---- Configuration ---- */
+
 configuration {
-    modi:                        "drun,filebrowser,window,run";
-    show-icons:                  true;
-    display-drun:                " ";
-    display-run:                 " ";
-    display-filebrowser:         " ";
-    display-window:              " ";
-    hover-select:                false;
-    drun-display-format:         "{name}";
-    window-format:               "{w}{t}";
-    me-select-entry:             "";
-    me-accept-entry:             "MousePrimary";
-    font:                        "RecMonoCasual Nerd Font Bold 12";
-    icon-theme:                  "kora";
+    modi:                       "drun,run";
+    font:                       "SF Pro Text Semibold 13";
+    show-icons:                 true;
+    icon-theme:                 "kora";
+    display-drun:               "APPS";
+    display-run:                "RUN";
+    display-filebrowser:        "FILES";
+    display-window:             "WINDOW";
+    hover-select:               false;
+    // scroll-method:              1;
+    me-select-entry:            "";
+    me-accept-entry:            "MousePrimary";
+    // drun-display-format:        "{name}";
+    window-format:              "{w} · {c} · {t}";
 }
 
-@theme "~/.config/rofi/theme.rasi"
 
+/* ---- Window ---- */
 
-// Main //
 window {
-    height:                      31em;
-    width:                       37em;
-    transparency:                "real";
-    fullscreen:                  false;
-    enabled:                     true;
-    cursor:                      "default";
-    spacing:                     0em;
-    padding:                     0em;
-    border-radius:               1.5em;
-    border:                      3px;
-    border-color:                #f3cad6;
-    background-color:            rgba(0,0,1,0.5);
+    width:                        600px;
+    x-offset:                     0px;
+    y-offset:                     50px;
+    spacing:                      0px;
+    padding:                      0px;
+    margin:                       0px;
+    color:                        #FFFFFF;
+    border:                       @border-width;
+    border-color:                 #FFFFFF;
+    cursor:                       "default";
+    transparency:                 "real";
+    location:                     center;
+    anchor:                       center;
+    fullscreen:                   false;
+    enabled:                      true;
+    border-radius:                24px;  // 16px;
+    background-color:             transparent;
 }
+
+
+/* ---- Mainbox ---- */
+
 mainbox {
-    enabled:                     true;
-    spacing:                     0em;
-    padding:                     0em;
-    orientation:                 horizontal;
-    children:                    [ "inputbar" , "mode-switcher" , "listbox" ];
-    background-color:            rgba(0,0,1,0.3);
+    enabled:                      true;
+    orientation:                  horizontal;
+    spacing:                      0px;
+    margin:                       0px;
+    background-color:             @background;
+    children:                     ["listbox"];
 }
 
 
-// Inputs //
-inputbar {
-    width:                       0em;
-    enabled:                     true;
-    children:                    [ "entry" ];
-}
-entry {
-    enabled:                     false;
-}
 
+/* ---- Listbox ---- */
 
-// Modes //
-mode-switcher {
-    border-radius:               1.2em;
-    width:                       9.3em;
-    margin:                      10px;
-    orientation:                 vertical;
-    enabled:                     true;
-    padding:                     4em 1.8em 4em 1.8em;
-    spacing:                     1em;
-    background-color:            rgba(0,0,1,0.2);
-    background-image:            url("/home/halcyon/Pictures/leaves-blue-3840x2160-17461 (Edited).jpeg", height);
-}
-button {
-    cursor:                      pointer;
-    border-radius:               4em;
-    background-color:            #0a0e1ae6;
-    text-color:                  #f2ecbc;
-}
-button selected {
-    border-radius:               4em;
-    background-color:            rgba(100,190,255,0.2);   /* Light glass effect */
-    border:                      2.7px;
-    border-color:                rgba(255, 255, 255, 0.35);  /* Brighter glass edge */
-    text-color:                  #FFFFFF;                     /* White text for contrast */
-}
-
-
-// Lists //
 listbox {
-    padding:                     0em;
-    spacing:                     0em;
+    spacing:                     20px;
+    background-color:            transparent;
     orientation:                 vertical;
-    children:                    [ "dummy" , "listview" , "dummy" ];
-    background-color:            transparent;
+    children:                    [ "inputbar", "message", "listview" ];
 }
-listview {
-    padding:                     1em;
-    spacing:                     0em;
-    enabled:                     true;
-    columns:                     1;
-    lines:                       7;
-    cycle:                       false;
-    dynamic:                     true;
-    scrollbar:                   false;
-    layout:                      vertical;
-    reverse:                     false;
-    expand:                      false;
-    fixed-height:                true;
-    fixed-columns:               true;
-    cursor:                      "default";
-    background-color:            transparent;
-    text-color:                  @main-fg;
-}
+
+
+/* ---- Dummy ---- */
+
 dummy {
     background-color:            transparent;
 }
 
 
-// Elements //
+/* ---- Inputbar ---- */
+
+inputbar {
+    enabled:                      true;
+    text-color:                   #808080;
+    spacing:                      10px;
+    padding:                      15px;
+    border-radius:                0px;
+    border-color:                 @foreground;
+    background-color:             @background;
+    children:                     [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
+    enabled:                      true;
+    expand:                       false;
+    padding:                      0px 5px 0px 5px;
+    str:                          "";
+    background-color:             transparent;
+    text-color:                   inherit;
+}
+
+entry {
+    enabled:                      true;
+    background-color:             transparent;
+    text-color:                   inherit;
+    cursor:                       text;
+    placeholder:                  "Search";
+    placeholder-color:            inherit;
+}
+
+
+/* ---- Mode Switcher ---- */
+
+
+/* ---- Listview ---- */
+
+listview {
+    enabled:                      true;
+    columns:                      1;
+    lines:                        7;
+    cycle:                        false;
+    dynamic:                      true;
+    scrollbar:                    false;
+    layout:                       vertical;
+    reverse:                      false;
+    fixed-height:                 true;
+    fixed-columns:                true;
+    spacing:                      0px;
+    padding:                      10px;
+    margin:                       0px;
+    background-color:             @background;
+    border:0px;
+}
+
+
+/* ---- Element ---- */
+
 element {
-    orientation:                 horizontal;
-    enabled:                     true;
-    spacing:                     1.5em;
-    padding:                     0.5em;
-    cursor:                      pointer;
+    enabled:                      true;
+    padding:                      10px;
+    spacing:                      15px;
+    margin:                       5px;
+    cursor:                       pointer;
+    border-radius:                24px;
+    border:                       0px;
     background-color:            transparent;
-    // text-color:                  #FFFFFF;
     text-color:                  #f2ecbc;
 }
+
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  #f2ecbc;
+}
+
+
 element selected.normal {
-    border-radius:               1.1em;
+    // border-radius:               1.1em;
     background-color:            rgba(203, 233, 241, 0.15);  /* Light blue with low opacity */
     border:                      0px;
     border-color:                rgba(255, 255, 255, 0.3);   /* Subtle bright border */
     text-color:                  #FFFFFF;                     /* White text for contrast */
 }
-element-icon {
-    size:                        3em;
-    cursor:                      inherit;
-    background-color:            transparent;
-    text-color:                  inherit;
-}
-element-text {
-    vertical-align:              0.5;
-    horizontal-align:            0;
-    cursor:                      inherit;
-    background-color:            transparent;
-    text-color:                  inherit;
+
+
+element alternate.normal {
+    background-color:            rgba(17, 17, 17, 0.4);
+    text-color:                  #f2ecbc;
 }
 
-// Error message //
-error-message {
-    text-color:                  @main-fg;
-    background-color:            @main-bg;
-    text-transform:              capitalize;
-    children:                    [ "textbox" ];
+
+element-icon {
+    background-color:            transparent;
+    text-color:                  #f2ecbc;
+    size:                        32px;
+    cursor:                      inherit;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+
+/*****----- Message -----*****/
+
+message {
+    background-color:            transparent;
+    border:0px;
+    margin:20px 0px 0px 0px;
+    padding:0px;
+    spacing:0px;
+    border-radius: 10px;
 }
 
 textbox {
-    text-color:                  inherit;
-    background-color:            inherit;
+    padding:                     15px;
+    margin:                      0px;
+    border-radius:               0px;
+    background-color:            @background;
+    text-color:                  #FFFFFF;
     vertical-align:              0.5;
-    horizontal-align:            0.5;
+    horizontal-align:            0.0;
+}
+
+error-message {
+    padding:                     15px;
+    border-radius:               20px;
+    background-color:            @background;
+    text-color:                  #FFFFFF;
 }

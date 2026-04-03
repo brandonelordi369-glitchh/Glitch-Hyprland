@@ -1,11 +1,11 @@
 #!/usr/bin/env zsh
 
-# swg - Simple wallpaper changer using swww
-# Usage: swg <image_path>
+# awg - Simple wallpaper changer using awww
+# Usage: awg <image_path>
 
 if [ -z "$1" ]; then
-    echo "Usage: swg <image_path>"
-    echo "Example: swg ~/Pictures/wallpaper.jpg"
+    echo "Usage: awg <image_path>"
+    echo "Example: awg ~/Pictures/wallpaper.jpg"
     exit 1
 fi
 
@@ -17,8 +17,8 @@ if [ ! -f "$IMAGE_PATH" ]; then
     exit 1
 fi
 
-# Change wallpaper with swww
-swww img "$IMAGE_PATH" --transition-fps 75 --transition-type random
+# Change wallpaper with awww
+awww img "$IMAGE_PATH" --transition-fps 75 --transition-type random
 
 if [ $? -eq 0 ]; then
     echo "Wallpaper changed to: $IMAGE_PATH"

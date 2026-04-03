@@ -127,8 +127,8 @@
       "on-scroll-up": "shift_up",
       "on-scroll-down": "shift_down"
     },
-    "format": "󰃭  {:%b %d    󰥔  %H:%M}", //24 hour format
-    "format-alt": "󰃭  {:%Y-%m-%d    󰥔  %H:%M:%S}",
+    "format": "󰃭  {:%b %d   󰥔  %H:%M}", //24 hour format
+    "format-alt": "󰃭  {:%Y-%m-%d   󰥔  %H:%M:%S}",
     "interval": 1
   },
 

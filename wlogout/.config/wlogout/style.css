@@ -19,21 +19,24 @@ button {
 	background-position: center;
 	background-size: 25%;
 
-	background-color: rgba(16,18,19,0.50);
-    opacity: 0.9;
+/* 	background-color: rgba(16,18,19,0.50); */
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 1.0;
     border: none;
     border-radius: 0px;
     transition: 0.15s ease-in-out all;
 }
 
 button:focus {
-    background-color: rgba(205, 214, 244, 0.2);
+/*     background-color: rgba(205, 214, 244, 0.2); */
+    background-color: rgba(255, 255, 255, 0.08);
     background-size: 34%;
 }
 
 button:hover,button:active {
     background-size: 40%;
-    background-color: rgba(205, 214, 244, 0.2);
+/*     background-color: rgba(205, 214, 244, 0.2); */
+    background-color: rgba(255, 255, 255, 0.08);
     margin: 75px 0px;
     border-radius: 50px;
     animation: gradient_f 20s ease-in infinite;
