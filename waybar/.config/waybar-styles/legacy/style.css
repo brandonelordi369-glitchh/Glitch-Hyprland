@@ -47,6 +47,32 @@ window#waybar {
     padding-left:12px;
 }
 
+/* General styling for custom quick links */
+#custom-firefox {
+    color: #ff6600;
+    font-size: 16px; /* Increase icon size */
+    padding: 0px 2px; /* Add spacing around icons */
+    margin: 3px; /* Add margin to space them out */
+}
+#custom-nautilus {
+    color: #00aaff;
+    font-size: 16px; /* Increase icon size */
+    padding: 0px 2px; /* Add spacing around icons */
+    margin: 3px; /* Add margin to space them out */
+}
+#custom-missioncenter {
+    color: #9d22d6;
+    font-size: 16px; /* Increase icon size */
+    padding: 0px 2px; /* Add spacing around icons */
+    margin: 3px; /* Add margin to space them out */
+}
+#custom-localsend {
+    color: #44cc44;
+    font-size: 16px; /* Increase icon size */
+    padding: 0px 2px; /* Add spacing around icons */
+    margin: 3px; /* Add margin to space them out */
+}
+
 
 /*#custom-appmenu {
     border: none;
@@ -79,13 +105,13 @@ window#waybar {
 
 #workspaces {
     background: #04050b; /*rgba(0,0,1,0.5);*/
-    margin: 5px 0px 5px 1px;
-    padding: 1px 2px;
-    border-radius: 28px 0px 0px 28px;
+    margin: 5px 1px 6px 1px;
+/*     padding: 0px 1px; */
+    border-radius: 15px;
     border: 0px;
     font-weight: bold;
     font-style: normal;
-/*     opacity: 0.9; */
+    opacity: 0.9;
     font-size: 16px;
     color: #FFFFFF;
     min-width: 12px;
@@ -162,19 +188,18 @@ tooltip label {
  * ----------------------------------------------------- */
 
 #window {
-    background: #04050b; /*rgba(0,0,1,0.5);*/ /*#1B1927;*/
-    padding: 1px 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 6px;
-    margin-left: 0px;
-    border-radius: 0px 28px 28px 0px;
-
-/*     opacity:0.9; */
+    background: @backgroundlight;
+    margin: 1px 15px 1px 15px;   /*  8px 15px 8px 15px; */
+    padding: 2px 10px 2px 10px;
+    border-radius: 12px;
+    color:@textcolor2;
+    font-size:16px;
+    font-weight:normal;
+    opacity:0.9;
 }
 
 window#waybar.empty #window {
-    background-color:#04050b;
+    background-color:transparent;
 }
 
 /* -----------------------------------------------------
@@ -238,13 +263,13 @@ window#waybar.empty #window {
     opacity: 0.8;
 }*/
  #custom-notification {
-    padding: 1px 10px;
-    margin: 5px 12px 5px 3px;
+    padding: 1px 10px 1px 10px;
+    margin: 5px 12px 5px 1px;
     font-size:16px;
     color: @peach;
     opacity: 1;
     background: #04050b; /*rgba(0,0,1,0.5);*/ /*#1B1927;*/
-    border-radius: 28px;
+    border-radius: 15px;
     transition: background 0.3s ease-in-out;
 }
 #custom-notification:hover {
@@ -259,12 +284,12 @@ window#waybar.empty #window {
     color:  #DF2782; /*#d62976;*/
     font-size: 16px;
     background: #04050b; /*rgba(0,0,1,0.5);*/ /*#1B1927;*/
-    border-radius: 28px;
-    margin-left: 3px;
-    margin-right: 3px;
+    border-radius: 15px;
+    margin-left: 1px;
+    margin-right: 7px;
     margin-top: 5px;
     margin-bottom: 5px;
-    padding: 1px 10px;
+    padding: 1px 11px 1px 11px;
 /*     box-shadow: 0 0 3px 1.6px rgba(220, 47, 47, 0.7); */
     transition: background 0.3s ease-in-out;
 }
@@ -273,37 +298,34 @@ window#waybar.empty #window {
     background: #04050b; /*rgba(0,0,1,0.5);*/
 }
 
+/* -----------------------------------------------------
+ * Custom Updates
+ * ----------------------------------------------------- */
 
 /* -----------------------------------------------------
  * Hardware Group
  * ----------------------------------------------------- */
 
  #disk,#memory,#cpu {
-    background-color: #04050b; /*#191826;*/ /*#1B1927;*/
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-/*     border-radius: 15px; */
-    padding: 1px 10px;
+    background-color: #191826; /*#1B1927;*/
+    margin: 5px 7px 5px 1px;
+    border-radius: 15px;
+    padding: 1px 10px 1px 10px;
     font-size:16px;
 }
 
 
 #cpu {
     color: @maroon;
-    border-radius: 28px 0px 0px 28px;
-/*     padding-left:10px; */
+    border-radius: 15px 0px 0px 15px;
+    padding-left:10px;
     margin-right:0px;
-    margin-left: 0px;
+    margin-left: 2px;
 }
 #memory {
-    color: @teal;
-/*     border-radius: 0px 15px 15px 0px; */
-    margin-left: 0px;
-}
-#disk {
     color: #89b4fa;
+    border-radius: 0px 15px 15px 0px;
+    margin-left: 0px;
 }
 
 
@@ -326,9 +348,9 @@ window#waybar.empty #window {
     background-color: #04050b; /*rgba(0,0,1,0.5);*/ /*#1B1927;*/
     font-size: 16px;
     color: #56E6E4; /*#77DCD7;*/
-    border-radius: 28px;
-    padding: 1px 10px;
-    margin: 5px 3px 5px 3px;
+    border-radius: 15px;
+    padding: 1px 10px 1px 10px;
+    margin: 5px 4px 5px 1px;
     transition: background 0.3s ease-in-out;
 /*     box-shadow: 0 0 5px 1.1px @teal; */
 /*     transition: box-shadow 0.3s ease-in-out; */
@@ -363,9 +385,9 @@ window#waybar.empty #window {
     background: #04050b; /*rgba(0,0,1,0.5);*/ /*#1B1927;*/
     font-size: 15px;
     color: #E0C677;
-    border-radius: 0px 28px 28px 0px;
-    padding: 1px 10px;
-    margin: 5px 3px 5px 0px;
+    border-radius: 15px;
+    padding: 1px 10px 1px 10px;
+    margin: 5px 1px 5px 1px;
     opacity: 1;
 /*     border:1px solid #FFFFFF; */
     transition: background 0.3s ease-in-out;
@@ -390,7 +412,7 @@ window#waybar.empty #window {
     background-color: @backgroundlight;
     font-size: 16px;
     color: @textcolor2;
-/*     border-radius: 15px; */
+    border-radius: 15px;
     padding: 2px 10px 0px 10px;
     margin: 8px 15px 8px 0px;
     opacity:0.8;
@@ -414,12 +436,12 @@ window#waybar.empty #window {
 #tray {
     background: #04050b; /*rgba(0,0,1,0.5);*/ /*#1B1927;*/
     opacity: 1.0;
-    padding: 1px 10px;
+    padding: 1.5px 9px 1.5px 9px;
     margin-top: 5px;
     margin-bottom: 5px;
-/*     border-radius: 15px; */
-    margin-right: 0px;
-    margin-left: 0px;
+    border-radius: 15px;
+    margin-right: 7px;
+    margin-left: 7px;
     transition: background 0.3s ease-in-out;
 }
 #tray:hover {

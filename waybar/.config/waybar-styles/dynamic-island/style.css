@@ -166,9 +166,9 @@ tooltip label {
     padding: 1px 10px;
     margin-top: 5px;
     margin-bottom: 5px;
-    margin-right: 6px;
+    margin-right: 0px;
     margin-left: 0px;
-    border-radius: 0px 28px 28px 0px;
+/*     border-radius: 15px; */
 
 /*     opacity:0.9; */
 }
@@ -239,12 +239,12 @@ window#waybar.empty #window {
 }*/
  #custom-notification {
     padding: 1px 10px;
-    margin: 5px 12px 5px 3px;
+    margin: 5px 12px 5px 0px;
     font-size:16px;
     color: @peach;
     opacity: 1;
     background: #04050b; /*rgba(0,0,1,0.5);*/ /*#1B1927;*/
-    border-radius: 28px;
+    border-radius: 0px 28px 28px 0px;
     transition: background 0.3s ease-in-out;
 }
 #custom-notification:hover {
@@ -259,9 +259,9 @@ window#waybar.empty #window {
     color:  #DF2782; /*#d62976;*/
     font-size: 16px;
     background: #04050b; /*rgba(0,0,1,0.5);*/ /*#1B1927;*/
-    border-radius: 28px;
-    margin-left: 3px;
-    margin-right: 3px;
+/*     border-radius: 15px; */
+    margin-left: 0px;
+    margin-right: 0px;
     margin-top: 5px;
     margin-bottom: 5px;
     padding: 1px 10px;
@@ -273,18 +273,18 @@ window#waybar.empty #window {
     background: #04050b; /*rgba(0,0,1,0.5);*/
 }
 
+/* -----------------------------------------------------
+ * Custom Updates
+ * ----------------------------------------------------- */
 
 /* -----------------------------------------------------
  * Hardware Group
  * ----------------------------------------------------- */
 
  #disk,#memory,#cpu {
-    background-color: #04050b; /*#191826;*/ /*#1B1927;*/
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-/*     border-radius: 15px; */
+    background-color: #191826; /*#1B1927;*/
+    margin: 5px 7px 5px 1px;
+    border-radius: 15px;
     padding: 1px 10px;
     font-size:16px;
 }
@@ -292,18 +292,15 @@ window#waybar.empty #window {
 
 #cpu {
     color: @maroon;
-    border-radius: 28px 0px 0px 28px;
-/*     padding-left:10px; */
+    border-radius: 15px 0px 0px 15px;
+    padding-left:10px;
     margin-right:0px;
-    margin-left: 0px;
+    margin-left: 2px;
 }
 #memory {
-    color: @teal;
-/*     border-radius: 0px 15px 15px 0px; */
-    margin-left: 0px;
-}
-#disk {
     color: #89b4fa;
+    border-radius: 0px 15px 15px 0px;
+    margin-left: 0px;
 }
 
 
@@ -326,9 +323,9 @@ window#waybar.empty #window {
     background-color: #04050b; /*rgba(0,0,1,0.5);*/ /*#1B1927;*/
     font-size: 16px;
     color: #56E6E4; /*#77DCD7;*/
-    border-radius: 28px;
+/*     border-radius: 15px; */
     padding: 1px 10px;
-    margin: 5px 3px 5px 3px;
+    margin: 5px 0px 5px 0px;
     transition: background 0.3s ease-in-out;
 /*     box-shadow: 0 0 5px 1.1px @teal; */
 /*     transition: box-shadow 0.3s ease-in-out; */
@@ -363,9 +360,9 @@ window#waybar.empty #window {
     background: #04050b; /*rgba(0,0,1,0.5);*/ /*#1B1927;*/
     font-size: 15px;
     color: #E0C677;
-    border-radius: 0px 28px 28px 0px;
+/*     border-radius: 15px; */
     padding: 1px 10px;
-    margin: 5px 3px 5px 0px;
+    margin: 5px 0px 5px 0px;
     opacity: 1;
 /*     border:1px solid #FFFFFF; */
     transition: background 0.3s ease-in-out;

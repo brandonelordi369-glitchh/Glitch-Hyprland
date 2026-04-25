@@ -22,34 +22,32 @@
         "~/.config/waybar/modules.json"
     ],
 
-    // // Modules Left
-    // "modules-left": [
-    //
-    // ],
-
-    // Modules Center
-    "modules-center": [
-        "hyprland/workspaces",
+    // Modules Left
+    "modules-left": [
+    "hyprland/workspaces",
         //"wlr/taskbar",
         "hyprland/window",
-        "custom/empty",
+        "custom/empty"
+    ],
+
+    // // Modules Center
+    // "modules-center": [
+    //     "hyprland/workspaces"
+    // ],
+
+    // Modules Right
+    "modules-right": [
         // "power-profiles-daemon",
-        "cpu",
-        "memory",
-        "disk",
-        "tray",
+        // "cpu",
+        // "memory",
         "pulseaudio",
         //"backlight",
         "bluetooth",
         // "network",
         // "group/tools",
+        "tray",
         "custom/exit",
-        "clock",
+         "clock",
         "custom/notification"
-    ],
-
-    // // Modules Right
-    // "modules-right": [
-    //
-    // ]
+    ]
 }
