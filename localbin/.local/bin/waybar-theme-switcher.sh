@@ -3,9 +3,6 @@
 THEMES_DIR="$HOME/dotfiles/waybar/.config/waybar-styles"
 TARGET_DIR="$HOME/dotfiles/waybar/.config/waybar"
 
-# FIX: ls -1 word-splits on spaces and misreads [brackets] as globs
-# was: themes=$(ls -1 "$THEMES_DIR")
-#      chosen=$(echo "$themes" | rofi -dmenu -p "Select Waybar Theme")
 chosen=$(find "$THEMES_DIR" -mindepth 1 -maxdepth 1 -type d -printf "%f\n" | sort \
     | rofi -dmenu -p "Select Waybar Theme")
 
@@ -18,19 +15,21 @@ if [ ! -d "$SELECTED_THEME" ]; then
     exit 1
 fi
 
-# FIX: rm -rf before cp means a failed copy leaves you with nothing
-# was: rm -rf "$TARGET_DIR"/*
-#      cp -r "$SELECTED_THEME"/* "$TARGET_DIR"/
-cp -r "$SELECTED_THEME"/. "$TARGET_DIR"/ || {
+# Stage into tmp first — if this fails, TARGET_DIR is untouched
+tmp_dir=$(mktemp -d)
+cp -r "$SELECTED_THEME"/. "$tmp_dir"/ || {
     notify-send "Waybar Theme Switcher" "Copy failed, config untouched."
+    rm -rf "$tmp_dir"
     exit 1
 }
 
-# FIX: pkill waybar is substring match; waybar & leaves a zombie
-# was: pkill waybar
-#      waybar &
+# :? guard — aborts if TARGET_DIR is somehow empty or unset
+rm -rf "${TARGET_DIR:?}"/*
+mv "$tmp_dir"/* "$TARGET_DIR"/
+rmdir "$tmp_dir"
+
 pkill -x waybar
-# sleep 0.1
+sleep 0.1
 waybar &>/dev/null & disown
 
 notify-send "Waybar Theme" "Switched to: $chosen"
