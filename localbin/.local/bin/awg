@@ -1,28 +1,33 @@
 #!/usr/bin/env zsh
-
-# awg - Simple wallpaper changer using awww
+# awg - Wallpaper changer (awww) + automatic hyprlock sync
 # Usage: awg <image_path>
-
 if [ -z "$1" ]; then
-    echo "Usage: awg <image_path>"
-    echo "Example: awg ~/Pictures/wallpaper.jpg"
+    cat <<EOF
+Usage: awg <image_path>
+Example: awg ~/Pictures/wallpaper.jpg
+         awg "/path/with spaces.jpg"
+EOF
     exit 1
 fi
 
-IMAGE_PATH="$1"
+IMAGE_PATH="${1:A}"
 
-# Check if file exists
 if [ ! -f "$IMAGE_PATH" ]; then
-    echo "Error: File '$IMAGE_PATH' not found"
+    echo "Error: File not found -> $IMAGE_PATH"
     exit 1
 fi
 
-# Change wallpaper with awww
 awww img "$IMAGE_PATH" --transition-fps 75 --transition-type random
 
-if [ $? -eq 0 ]; then
-    echo "Wallpaper changed to: $IMAGE_PATH"
-else
+if [ $? -ne 0 ]; then
     echo "Error: Failed to change wallpaper"
     exit 1
+fi
+
+HYPRLOCK_CONF="$HOME/.config/hypr/hyprlock.conf"
+if [ -f "$HYPRLOCK_CONF" ] && grep -q "background {" "$HYPRLOCK_CONF" 2>/dev/null; then
+    sed -i "/background {/,/}/ s|path = .*|path = ${IMAGE_PATH}|" "$HYPRLOCK_CONF"
+    echo "AWG: $IMAGE_PATH (wallpaper + hyprlock background)"
+else
+    echo "AWG: $IMAGE_PATH (wallpaper only; hyprlock.conf missing or has no background block)"
 fi
