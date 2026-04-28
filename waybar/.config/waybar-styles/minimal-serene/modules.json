@@ -1,0 +1,217 @@
+//  __  __           _       _
+// |  \/  | ___   __| |_   _| | ___  ___
+// | |\/| |/ _ \ / _` | | | | |/ _ \/ __|
+// | |  | | (_) | (_| | |_| | |  __/\__ \
+// |_|  |_|\___/ \__,_|\__,_|_|\___||___/
+//
+//
+
+{
+  // Workspaces
+  "hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace r-1",
+    "on-scroll-down": "hyprctl dispatch workspace r+1",
+    // "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 9
+    }
+  },
+
+  // Window
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 50,          // ← tweak this (30–60 is usually perfect)
+    "tooltip": false,
+    "rewrite": {
+      "(.{50})": "$1..."       // optional: forces ellipsis in the config too
+    }
+  },
+
+
+  // Empty
+  "custom/empty": {
+    "format": ""
+  },
+
+
+  // Rofi Application Launcher
+  "custom/appmenu": {
+    "format": "󰣆",
+    "on-click": "sleep 0.2;pkill rofi || rofi -show drun",
+    "tooltip": false
+  },
+
+
+  // Power Menu
+  "custom/exit": {
+    "format": "",
+    "on-click": "wlogout -b 5",
+    "on-click-right": "hyprlock",
+    "tooltip-format": "Left: Power menu\nRight: Lock screen"
+  },
+
+  // SwayNC
+  "custom/notification": {
+    "tooltip-format": "Left: Notifications\nRight: Do not disturb",
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+
+
+  // System tray
+  "tray": {
+    "icon-size": 22,
+    "spacing": 7
+  },
+
+  // Clock
+  "clock": {
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "timezone": "",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+	"months": "<span color='#bb9af7'><b>{}</b></span>",  // Purple
+	"days": "<span color='#7aa2f7'><b>{}</b></span>",    // Blue
+	"weeks": "<span color='#9ece6a'><b>W{}</b></span>",  // Green
+	"weekdays": "<span color='#e0af68'><b>{}</b></span>",// Yellow
+	"today": "<span background='#2ac3de' color='#1a1b26'><b><u>{}</u></b></span>" // Cyan background with dark text
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    },
+    "format": "󰃭  {:%b %d   󰥔  %H:%M}", //24 hour format
+    "format-alt": "󰃭  {:%Y-%m-%d   󰥔  %H:%M:%S}",
+    "interval": 1
+  },
+
+
+  // CPU
+  "cpu": {
+    "interval": 2,
+    "format": "  {usage}%",
+    "on-click": "kitty -e btop"
+  },
+
+  // Memory
+  "memory": {
+    "interval": 2,
+    "format": "  {}%",
+    "on-click": "kitty -e btop"
+  },
+
+  // Harddisc space used
+  "disk": {
+    "interval": 10,
+    "format": "  {percentage_used}% ",
+    "path": "/",
+    "on-click": "kitty -e btop"
+  },
+
+
+  // Power Profiles Daemon
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+
+  // Pulseaudio
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  // Bluetooth
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": "",
+    "format-off": "",
+    "interval": 30,
+    "on-click": "blueman-manager",
+    "format-no-controller": ""
+  },
+
+  // Other
+  "user": {
+    "format": "{user}",
+    "interval": 60,
+    "icon": false
+  },
+
+  // backlight:
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "scroll-step": 1
+  }
+}

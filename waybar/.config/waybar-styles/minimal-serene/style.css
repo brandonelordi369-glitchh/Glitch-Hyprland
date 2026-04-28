@@ -1,0 +1,327 @@
+/*
+ * __        __          _                  ____  _         _
+ * \ \      / /_ _ _   _| |__   __ _ _ __  / ___|| |_ _   _| | ___
+ *  \ \ /\ / / _` | | | | '_ \ / _` | '__| \___ \| __| | | | |/ _ \
+ *   \ V  V / (_| | |_| | |_) | (_| | |     ___) | |_| |_| | |  __/
+ *    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___|
+ *                 |___/                              |___/
+ *
+ * -----------------------------------------------------
+*/
+
+
+@import "colors.css";
+
+window#waybar {
+    background-color: rgba(255,255,255,0.1);
+/*     background-color: transparent; */
+}
+
+* {
+    font-family: "SF Pro Text", "Hasklug Nerd Font Propo";
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 0px;
+}
+
+window#waybar {
+    background-color: rgba(0,0,0,0.2);
+    border-bottom: 0px solid #ffffff;
+    /* color: #FFFFFF; */
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+.modules-left {
+    padding-left:12px;
+}
+.modules-right {
+    padding-left:12px;
+}
+
+/* -----------------------------------------------------
+ * Workspaces
+ * ----------------------------------------------------- */
+
+#workspaces * {
+    color: whitesmoke;
+}
+
+#workspaces {
+    border-style: solid;
+    background-color: transparent;
+    margin: 4px 1px;
+    padding: 0px;
+    border-radius: 10px;
+    border: 0px;
+    opacity: 0.8;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    border-radius: 10px;
+    border: 0px;
+    margin: 4px 1px;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.9
+}
+
+#workspaces button.active {
+    color: @textcolor1;
+    background: @base;
+    border-radius: 10px;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
+}
+
+#workspaces button:hover * {
+    color: @mauve;
+}
+
+#workspaces button:hover {
+    color: @mauve;
+    box-shadow: none;
+    /* Remove predefined box-shadow */
+    text-shadow: none;
+    /* Remove predefined text-shadow */
+    border-radius: 10px;
+    background: none;
+    transition: all 0.3s ease-in-out;
+    opacity:0.7;
+}
+
+#workspaces button.focused {
+    color: @mauve;
+    border-radius: 20px;
+    /* background-color: @flamingo; */
+}
+
+#workspaces button.focused * {
+    color: @mauve;
+}
+
+/* Additional Tweaks */
+
+#workspaces button.empty {
+    color: whitesmoke;
+    opacity: 0.4
+}
+
+#workspaces button.empty.active {
+    color: @textcolor1;
+    background: @base;
+    border-radius: 15px;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+}
+
+#workspaces button.empty:hover {
+    color: @mauve;
+    box-shadow: none;
+    /* Remove predefined box-shadow */
+    text-shadow: none;
+    /* Remove predefined text-shadow */
+    border-radius: 10px;
+    background: none;
+    transition: all 0.3s ease-in-out;
+    opacity:0.7;
+}
+
+
+/* -----------------------------------------------------
+ * Tooltips
+ * ----------------------------------------------------- */
+
+tooltip {
+    background: #010107;
+    border: 1px solid #121226;
+    border-radius: 16px;
+}
+
+tooltip label {
+    color: #f4f1d9;
+}
+
+
+/* -----------------------------------------------------
+ * Window
+ * ----------------------------------------------------- */
+
+#window {
+    background: @backgroundlight;
+    padding: 1px 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 6px;
+    margin-left: 6px;
+    color:@textcolor2;
+}
+
+window#waybar.empty #window {
+    background-color:transparent;
+}
+
+
+/* -----------------------------------------------------
+ * Modules
+ * ----------------------------------------------------- */
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+
+
+/* -----------------------------------------------------
+ * Custom Notification
+ * ----------------------------------------------------- */
+
+  #custom-notification {
+    padding: 1px 10px;
+    margin: 5px 5px 5px 3px;
+    color: @peach;
+}
+
+/* -----------------------------------------------------
+ * Custom Exit
+ * ----------------------------------------------------- */
+
+#custom-exit {
+    color: rgba(220, 47, 47, 1);
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding: 5px 10px;
+}
+
+/* -----------------------------------------------------
+ * Hardware Group
+ * ----------------------------------------------------- */
+
+#disk,#memory,#cpu {
+
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+/*     border-radius: 15px; */
+    padding: 1px 10px;
+}
+
+
+#cpu {
+    color: @maroon;
+
+/*     padding-left:10px; */
+    margin-right:0px;
+    margin-left: 0px;
+}
+#memory {
+    color: @teal;
+/*     border-radius: 0px 15px 15px 0px; */
+    margin-left: 0px;
+}
+#disk {
+    color: #89b4fa;
+}
+
+/* -----------------------------------------------------
+ * Power Profiles Daemon
+ * ----------------------------------------------------- */
+
+/* #power-profiles-daemon {
+    margin: 0px 13px 0px 0px;
+    padding:0px;
+    color:@yellow;
+}*/
+
+/* -----------------------------------------------------
+ * Clock
+ * ----------------------------------------------------- */
+
+#clock {
+    color: #56E6E4;
+    padding: 1px 10px;
+    margin: 5px 3px 5px 3px;
+}
+
+
+/* -----------------------------------------------------
+ * Backlight
+ * ----------------------------------------------------- */
+
+ #backlight {
+    background-color: @backgroundlight;
+    color: @textcolor2;
+    border-radius: 15px;
+    padding: 2px 10px 0px 10px;
+    margin: 8px 15px 8px 0px;
+    opacity:0.8;
+}
+
+/* -----------------------------------------------------
+ * Pulseaudio
+ * ----------------------------------------------------- */
+
+#pulseaudio {
+    color: #E0C677;
+    padding: 1px 10px;
+    margin: 5px 3px 5px 0px;
+}
+#pulseaudio.muted {
+    color: #3b4252;
+}
+
+
+/* -----------------------------------------------------
+ * Bluetooth
+ * ----------------------------------------------------- */
+
+ #bluetooth, #bluetooth.on, #bluetooth.connected {
+    background-color: @backgroundlight;
+    color: @textcolor2;
+    border-radius: 15px;
+    padding: 2px 10px 0px 10px;
+    margin: 8px 15px 8px 0px;
+    opacity:0.8;
+}
+
+#bluetooth.off {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* -----------------------------------------------------
+ * Battery
+ * ----------------------------------------------------- */
+
+
+/* -----------------------------------------------------
+ * Tray
+ * ----------------------------------------------------- */
+
+#tray {
+    padding: 1px 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 0px;
+    margin-left: 0px;
+    color: @sky;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
