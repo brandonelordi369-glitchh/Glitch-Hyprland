@@ -4,14 +4,12 @@
 //   \ V  V / (_| | |_| | |_) | (_| | |    
 //    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    
 //                 |___/                   
-//  
-// by Brandon Elordi
-// ----------------------------------------------------- 
 //
+
 {
     // General Settings
     "layer": "top",
-    "margin-top": 3,
+    "margin-top": 0,
     "margin-bottom": 0,
     "margin-left": 0,
     "margin-right": 0,
@@ -22,34 +20,30 @@
         "~/.config/waybar/modules.json"
     ],
 
-    // // Modules Left
-    // "modules-left": [
-    //
-    // ],
+    // Modules Left
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/empty"
+    ],
 
     // Modules Center
     "modules-center": [
-        "hyprland/workspaces",
-        //"wlr/taskbar",
         "hyprland/window",
-        "custom/empty",
+    ],
+
+    // Modules Right    
+    "modules-right": [
         // "power-profiles-daemon",
+        //"backlight",
+        // "network",
         "cpu",
         "memory",
         "disk",
+        // "group/tools",
         "tray",
         "pulseaudio",
-        //"backlight",
-        "bluetooth",
-        // "network",
-        // "group/tools",
-        "custom/exit",
         "clock",
+        "custom/exit",
         "custom/notification"
-    ],
-
-    // // Modules Right
-    // "modules-right": [
-    //
-    // ]
+    ]
 }

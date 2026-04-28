@@ -6,32 +6,7 @@
 //
 //
 
-
-
-
 {
-
-  "custom/firefox": {
-    "format": "",
-    "on-click": "firefox",
-    "tooltip": false
-  },
-  "custom/nautilus": {
-    "format": "",
-    "on-click": "nemo \"/run/media/halcyon/7d2f3c37-2ab3-4360-9b5e-d10b3ebcf93b/HardDD backup/\"",
-    "tooltip": false
-  },
-  "custom/missioncenter": {
-    "format": "",
-    "on-click": "kitty -e btop",
-    "tooltip": false
-  },
-  "custom/localsend": {
-    "format": "󱨧",
-    "on-click": "/home/halcyon/apps/LocalSend-1.17.0-linux-x86-64.AppImage",
-    "tooltip": false
-  },
-
   // Workspaces
   "hyprland/workspaces": {
     "on-scroll-up": "hyprctl dispatch workspace r-1",
@@ -39,14 +14,14 @@
     // "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
-    "format": "{icon}",
+    "format": "{}",
     "format-icons": {
       "urgent": "",
       "active": "",
       "default": ""
     },
     "persistent-workspaces": {
-      "*": 5
+      "*": 9
     }
   },
 
@@ -77,7 +52,7 @@
 
   // Power Menu
   "custom/exit": {
-    "format": "⭘",  // ⏻
+    "format": "",
     "on-click": "wlogout -b 5",
     "on-click-right": "hyprlock",
     "tooltip-format": "Left: Power menu\nRight: Lock screen"
@@ -165,7 +140,7 @@
     "on-click": "kitty -e btop"
   },
 
-  
+
   // Power Profiles Daemon
   "power-profiles-daemon": {
     "format": "{icon}",
