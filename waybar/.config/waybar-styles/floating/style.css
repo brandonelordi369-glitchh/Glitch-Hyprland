@@ -27,7 +27,8 @@ window#waybar {
 
 window#waybar {
     background-color: rgba(0,0,0,0.2);  /*#04050b ~for electric-pitch black.. , rgba(0,0,0,0.2) ~for transparency..*/
-    border-bottom: 0px solid #ffffff;
+    border: 1.5px solid rgba(203, 233, 241, 0.15);
+    border-radius: 12px;
     /* color: #FFFFFF; */
     transition-property: background-color;
     transition-duration: .5s;
@@ -185,7 +186,7 @@ window#waybar.empty #window {
 
   #custom-notification {
     padding: 1px 10px;
-    margin: 5px 5px 5px 3px;
+    margin: 5px 7px 5px 0px;
     color: @peach;
 }
 
@@ -250,7 +251,7 @@ window#waybar.empty #window {
 #clock {
     color: #56E6E4;
     padding: 1px 10px;
-    margin: 5px 3px 5px 3px;
+    margin: 5px 0px 5px 3px;
 }
 
 

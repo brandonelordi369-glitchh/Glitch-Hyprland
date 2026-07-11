@@ -38,7 +38,7 @@ fastfetch config By Brandon Elordi...
     },
     {
       "type": "kernel",
-      "key": "   ",
+      "key": "   ",  // 
       "format": "{2}",
       "keyColor": "red"
     },
