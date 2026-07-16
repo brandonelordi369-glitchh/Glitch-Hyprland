@@ -6,7 +6,6 @@
 -- Load all modules
 require("modules.program_keywords")
 require("modules.monitors")
-require("modules.environment_variables")
 require("modules.looks")
 require("modules.animations")
 require("modules.layouts")
