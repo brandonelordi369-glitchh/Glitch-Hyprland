@@ -64,9 +64,9 @@ hl.bind(vars.mainMod .. " + period", hl.dsp.exec_cmd("rofi -modi emoji -show emo
 hl.bind(vars.mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("rofi -show window"))
 hl.bind(vars.mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("hyprpicker -a"))
 
-hl.bind("PRINT", hl.dsp.exec_cmd("$HOME/screenshot_full.sh"), { locked = true })
-hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("$HOME/screenshot_select.sh"), { locked = true })
-hl.bind("ALT + PRINT", hl.dsp.exec_cmd("$HOME/screenshot_clipboard.sh"), { locked = true })
+hl.bind("PRINT", hl.dsp.exec_cmd("$HOME/.local/bin/screenshot_full.sh"), { locked = true })
+hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("$HOME/.local/bin/screenshot_select.sh"), { locked = true })
+hl.bind("ALT + PRINT", hl.dsp.exec_cmd("$HOME/.local/bin/screenshot_clipboard.sh"), { locked = true })
 
 hl.bind("SHIFT + SUPER + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 hl.bind(vars.mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("$HOME/.local/bin/waybar-theme-switcher.sh"))
