@@ -31,6 +31,12 @@ for i = 1, 10 do
     hl.bind(vars.mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
+-- Move active window
+hl.bind(vars.mainMod .. " + SHIFT + up",    hl.dsp.window.swap({ direction = "up" }))
+hl.bind(vars.mainMod .. " + SHIFT + down",  hl.dsp.window.swap({ direction = "down" }))
+hl.bind(vars.mainMod .. " + SHIFT + left",  hl.dsp.window.swap({ direction = "left" }))
+hl.bind(vars.mainMod .. " + SHIFT + right", hl.dsp.window.swap({ direction = "right" }))
+
 -- Special workspace
 hl.bind(vars.mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(vars.mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))

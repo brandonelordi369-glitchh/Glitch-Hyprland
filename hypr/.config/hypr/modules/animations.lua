@@ -22,3 +22,4 @@ hl.animation({ leaf = "layersOut",     enabled = true, speed = 5,    bezier = "l
 hl.animation({ leaf = "fadeLayersIn",  enabled = true, speed = 1.79, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 1.39, bezier = "almostLinear" })
 hl.animation({ leaf = "workspaces",    enabled = true, speed = 5,    bezier = "myBezier" })
+-- hl.animation({ leaf = "borderangle",   enabled = true, speed = 30,   bezier = "linear", style = "loop" })
