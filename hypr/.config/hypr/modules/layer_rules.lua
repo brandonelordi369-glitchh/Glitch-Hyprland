@@ -1,14 +1,15 @@
 -- LAYER RULES
 hl.layer_rule({
-    name  = "waybar-blur",
+    name  = "waybar",
     match = { namespace = "waybar" },
+    animation = "slide 80%",
     blur         = true,
     blur_popups  = true,
     ignore_alpha = 0,
 })
 
 hl.layer_rule({
-    name  = "logout-blur",
+    name  = "logout-menu",
     match = { namespace = "logout_dialog" },
     blur = true,
 })
@@ -18,7 +19,7 @@ hl.layer_rule({
     match = { namespace = "rofi" },
     blur         = true,
     ignore_alpha = 0,
-    animation    = "popin 75%",
+    animation    = "popin 80%",
 })
 
 hl.layer_rule({
