@@ -76,3 +76,5 @@ hl.bind("ALT + PRINT", hl.dsp.exec_cmd("$HOME/.local/bin/screenshot_clipboard.sh
 
 hl.bind("SHIFT + SUPER + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 hl.bind(vars.mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("$HOME/.local/bin/waybar-theme-switcher.sh"))
+
+hl.bind(vars.mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("$HOME/.local/bin/wall_picker.sh"))

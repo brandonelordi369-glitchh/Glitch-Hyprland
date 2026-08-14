@@ -131,6 +131,3 @@ alias umount2='udisksctl unmount -b /dev/sda2'
 alias umount3='udisksctl unmount -b /dev/sda3'
 alias mountall='udisksctl mount -b /dev/sda2 && udisksctl mount -b /dev/sda3'
 alias diskstatus='udisksctl status'
-
-# To customize prompt, run `p10k configure` or edit ~/dotfiles/zsh_p10k/.p10k.zsh.
-[[ ! -f ~/dotfiles/zsh_p10k/.p10k.zsh ]] || source ~/dotfiles/zsh_p10k/.p10k.zsh

@@ -1,0 +1,96 @@
+/**
+ * ROFI Layout
+ *
+ * Attribute: rofilaunch, wallpaper_Picker
+ * User: Brandon Elordi [ Glitch-Hyprland ]
+ *
+ */
+
+// Config //
+configuration {
+    modi:                        "drun";
+    show-icons:                  true;
+    drun-display-format:         "{name}";
+    font:                        "SF Pro Text Semibold 13";
+}
+
+@theme "~/.config/rofi/theme.rasi"
+
+
+// Main //
+window {
+    enabled:                     true;
+    fullscreen:                  false;
+    transparency:                "real";
+    cursor:                      "default";
+    spacing:                     0em;
+    padding:                     0em;
+    border:                      0em;
+    border-radius:               0em;
+    border-color:                transparent;
+    background-color:            rgba(0,0,0,0.2);
+}
+mainbox {
+    enabled:                     true;
+    orientation:                 horizontal;
+    children:                    [ "dummy", "frame", "dummy" ];
+    background-color:            transparent;
+}
+frame {
+    children:                    [ "listview" ];
+    background-color:            transparent;
+}
+
+
+// Lists //
+listview {
+    enabled:                     true;
+    spacing:                     4em;
+    padding:                     4em;
+    columns:                     1;
+    lines:                       6;
+    cycle:                       true;
+    dynamic:                     false;
+    fixed-height:                false;
+    fixed-columns:               true;
+    reverse:                     true;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @main-fg;
+    layout:                      horizontal;
+}
+dummy {
+    width:                       3em;
+    expand:                      false;
+    background-color:            transparent;
+}
+
+
+// Elements //
+element {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0em;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  #f2ecbc;
+}
+element selected.normal {
+    background-color:            rgba(203, 233, 241, 0.15);
+    text-color:                  #FFFFFF;
+}
+element-icon {
+    cursor:                      inherit;
+    size:                        10em;
+    background-color:            transparent;
+    text-color:                  inherit;
+    expand:                      false;
+}
+element-text {
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
