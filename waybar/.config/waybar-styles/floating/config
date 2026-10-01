@@ -9,6 +9,7 @@
 {
     // General Settings
     "layer": "top",
+    "height": 36,
     "margin-top": 4,
     "margin-bottom": 0,
     "margin-left": 10,

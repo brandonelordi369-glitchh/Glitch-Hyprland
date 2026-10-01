@@ -37,6 +37,12 @@ hl.window_rule({
     float = true,
 })
 
+hl.window_rule({
+    name  = "pavucontrol-Gui-float",
+    match = { title = "^(.*Volume Control.*)$" },
+               float = true,
+})
+
 -- Hyprland official run launcher positioning (optional)
 hl.window_rule({
     name  = "hyprland-run-position",

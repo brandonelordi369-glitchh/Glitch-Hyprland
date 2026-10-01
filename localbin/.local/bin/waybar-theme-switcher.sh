@@ -23,6 +23,10 @@ cp -r "$SELECTED_THEME"/. "$tmp_dir"/ || {
     exit 1
 }
 
+# Protect generated colors.css
+rm -f "$tmp_dir/colors.css"
+cp "$TARGET_DIR/colors.css" "$tmp_dir/colors.css" 2>/dev/null || true
+
 # :? guard — aborts if TARGET_DIR is somehow empty or unset
 rm -rf "${TARGET_DIR:?}"/*
 mv "$tmp_dir"/* "$TARGET_DIR"/

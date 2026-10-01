@@ -1,0 +1,73 @@
+[config]
+
+[templates.waybar]
+input_path  = "~/.config/matugen/templates/waybar-colors.css"
+output_path = "~/.config/waybar/colors.css"
+post_hook   = "pkill -SIGUSR2 -x waybar || true"
+
+[templates.kitty]
+input_path  = "~/.config/matugen/templates/kitty-colors.conf"
+output_path = "~/.config/kitty/Color_Palettes/matugen.conf"
+post_hook   = "kill -SIGUSR1 $(pidof kitty) 2>/dev/null || true"
+
+[templates.rofi]
+input_path  = "~/.config/matugen/templates/rofi-theme.rasi"
+output_path = "~/.config/rofi/theme.rasi"
+
+[templates.hyprland]
+input_path  = "~/.config/matugen/templates/hyprland-colors.lua"
+output_path = "~/.config/hypr/generated/hyprland-colors.lua"
+post_hook   = "hyprctl reload || true"
+
+[templates.hyprlock]
+input_path = "~/.config/matugen/templates/hyprlock-colors.conf"
+output_path = "~/.config/hypr/generated/hyprlock-colors.conf"
+
+[templates.cava]
+input_path  = "~/.config/matugen/templates/cava-colors.ini"
+output_path = "~/.config/cava/themes/matugen"
+post_hook   = "pkill -USR1 cava || true"
+
+[templates.btop]
+input_path  = "~/.config/matugen/templates/btop.theme"
+output_path = "~/.config/btop/themes/matugen.theme"
+post_hook = 'pkill -USR2 btop || true'
+
+[templates.yazi]
+input_path = '~/.config/matugen/templates/yazi-theme.toml'
+output_path = '~/.config/yazi/theme.toml'
+
+[templates.swaync]
+input_path = "~/.config/matugen/templates/swaync-col.css"
+output_path = "~/.config/swaync/generated/matugen-swaync.css"
+post_hook = "swaync-client -rs"
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/colors.css'
+post_hook = '''
+gsettings set org.gnome.desktop.interface gtk-theme ""
+gsettings set org.gnome.desktop.interface gtk-theme {{ mode | replace: "Dark", "adw-gtk3-dark" | replace: "Light", "adw-gtk3" | replace: "dark", "adw-gtk3-dark" | replace: "light", "adw-gtk3" }}
+gsettings set org.gnome.desktop.interface color-scheme {{ mode | replace: "Dark", "prefer-dark" | replace: "Light", "default" | replace: "dark", "prefer-dark" | replace: "light", "default" }}
+'''
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/colors.css'
+post_hook = '''
+gsettings set org.gnome.desktop.interface gtk-theme ""
+gsettings set org.gnome.desktop.interface gtk-theme {{ mode | replace: "Dark", "adw-gtk3-dark" | replace: "Light", "adw-gtk3" | replace: "dark", "adw-gtk3-dark" | replace: "light", "adw-gtk3" }}
+gsettings set org.gnome.desktop.interface color-scheme {{ mode | replace: "Dark", "prefer-dark" | replace: "Light", "default" | replace: "dark", "prefer-dark" | replace: "light", "default" }}
+'''
+
+[templates.vscode-raw]
+input_path  = "~/.config/matugen/templates/vscode-colors"
+output_path = "~/.cache/matugen/vscode-colors"
+
+[templates.vscode-json]
+input_path  = "~/.config/matugen/templates/vscode-colors.json"
+output_path = "~/.cache/matugen/vscode-colors.json"
+
+[templates.zed]
+input_path = '~/.config/matugen/templates/zed-colors.json'
+output_path = '~/.config/zed/themes/matugen.json'

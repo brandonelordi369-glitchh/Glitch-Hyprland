@@ -6,12 +6,12 @@
  *
  */
 
+@import "theme.rasi"
 
 * {
-    background: rgba(0,0,1,0.3);
-    foreground: #000000;
-    alt-color: #111111FF;
-    color11:    #02C2BC;
+    // background: rgba(0,0,1,0.3);
+    background: @main-bg;
+    foreground: @main-fg;
 }
 
 * { border-width: 2px; }
@@ -34,6 +34,7 @@ configuration {
     me-accept-entry:            "MousePrimary";
     // drun-display-format:        "{name}";
     window-format:              "{w} · {c} · {t}";
+    // dpi:						1;
 }
 
 
@@ -46,9 +47,9 @@ window {
     spacing:                      0px;
     padding:                      0px;
     margin:                       0px;
-    color:                        #FFFFFF;
+    color:                        @main-fg;
+    border-color:                 @primary;
     border:                       @border-width;
-    border-color:                 #FFFFFF;
     cursor:                       "default";
     transparency:                 "real";
     location:                     center;
@@ -157,12 +158,12 @@ element {
     border-radius:                24px;
     border:                       0px;
     background-color:            transparent;
-    text-color:                  #f2ecbc;
+    text-color:                  @secondary;
 }
 
 element normal.normal {
     background-color:            transparent;
-    text-color:                  #f2ecbc;
+    text-color:                  @secondary;
 }
 
 
@@ -171,19 +172,19 @@ element selected.normal {
     background-color:            rgba(203, 233, 241, 0.15);  /* Light blue with low opacity */
     border:                      0px;
     border-color:                rgba(255, 255, 255, 0.3);   /* Subtle bright border */
-    text-color:                  #FFFFFF;                     /* White text for contrast */
+    text-color:                  @tertiary;                     /* White text for contrast */
 }
 
 
 element alternate.normal {
     background-color:            rgba(17, 17, 17, 0.4);
-    text-color:                  #f2ecbc;
+    text-color:                  @secondary;
 }
 
 
 element-icon {
     background-color:            transparent;
-    text-color:                  #f2ecbc;
+    text-color:                  @secondary; /* #f2ecbc; */
     size:                        32px;
     cursor:                      inherit;
 }
@@ -213,7 +214,7 @@ textbox {
     margin:                      0px;
     border-radius:               0px;
     background-color:            @background;
-    text-color:                  #FFFFFF;
+    text-color:                  @main-fg; /* #FFFFFF; */
     vertical-align:              0.5;
     horizontal-align:            0.0;
 }
@@ -222,5 +223,5 @@ error-message {
     padding:                     15px;
     border-radius:               20px;
     background-color:            @background;
-    text-color:                  #FFFFFF;
+    text-color:                  @main-fg; /* #FFFFFF; */
 }

@@ -33,6 +33,7 @@ window#waybar {
     border: none;
     border-radius: 0px;
     font-size: 16px;
+    min-height: 0;
 }
 
 /*window#waybar {
@@ -123,15 +124,15 @@ window#waybar {
     border-radius: 15px;
     border: 0px;
     color: #FFFFFF;
-    background-color: #C37F80; /*#FC6A67*/ /*#C53353*/ /*#45EBEA;*/ /*@blue;*/
+    background-color: @tertiary; /*#FC6A67*/ /*#C53353*/ /*#45EBEA;*/ /*@blue;*/
     transition: all 0.3s ease-in-out;
-    opacity: 0.7; /*0.4*/
+    opacity: 0.8; /*0.4*/
     min-width: 12px;
 }
 
 #workspaces button.active {
     color: #FFFFFF;
-    background: @sapphire;
+    background: @primary;
     border-radius: 15px;
     min-width: 40px;
     transition: all 0.3s ease-in-out;
@@ -140,9 +141,9 @@ window#waybar {
 
 #workspaces button:hover {
     color: #FFFFFF;
-    background: #45EBEA; /*@teal;*/
+    background: @secondary; /*@teal;*/
     border-radius: 15px;
-    opacity:0.7;
+    opacity:0.9;
 }
 
 
@@ -155,7 +156,7 @@ window#waybar {
 
 #workspaces button.empty.active {
     color: #FFFFFF;
-    background: @sapphire;
+    background: @primary;
     border-radius: 15px;
     min-width: 40px;
     transition: all 0.3s ease-in-out;
@@ -281,7 +282,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-exit {
-    color:  #DF2782; /*#d62976;*/
+    color:  @error; /*#DF2782;*/ /*#d62976;*/
     font-size: 16px;
     background: #04050b; /*rgba(0,0,1,0.5);*/ /*#1B1927;*/
     border-radius: 15px;
@@ -323,9 +324,12 @@ window#waybar.empty #window {
     margin-left: 2px;
 }
 #memory {
-    color: #89b4fa;
+    color: @teal;
     border-radius: 0px 15px 15px 0px;
     margin-left: 0px;
+}
+#disk {
+    color: @blue;
 }
 
 
@@ -347,7 +351,7 @@ window#waybar.empty #window {
 #clock {
     background-color: #04050b; /*rgba(0,0,1,0.5);*/ /*#1B1927;*/
     font-size: 16px;
-    color: #56E6E4; /*#77DCD7;*/
+    color: @teal; /*#77DCD7;*/
     border-radius: 15px;
     padding: 1px 10px 1px 10px;
     margin: 5px 4px 5px 1px;
@@ -384,7 +388,7 @@ window#waybar.empty #window {
 #pulseaudio {
     background: #04050b; /*rgba(0,0,1,0.5);*/ /*#1B1927;*/
     font-size: 15px;
-    color: #E0C677;
+    color: @yellow;
     border-radius: 15px;
     padding: 1px 10px 1px 10px;
     margin: 5px 1px 5px 1px;

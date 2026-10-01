@@ -23,6 +23,7 @@ window#waybar {
     font-weight: 500;
     border: none;
     border-radius: 0px;
+    min-height: 0;
 }
 
 window#waybar {
@@ -194,7 +195,8 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-exit {
-    color: rgba(220, 47, 47, 1);
+/*     color: rgba(220, 47, 47, 1); */
+    color: @error;
     margin-left: 1px;
     margin-right: 1px;
     margin-top: 3px;
@@ -230,7 +232,7 @@ window#waybar.empty #window {
     margin-left: 0px;
 }
 #disk {
-    color: #89b4fa;
+    color: @blue;
 }
 
 /* -----------------------------------------------------
@@ -248,7 +250,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #clock {
-    color: #56E6E4;
+    color: @teal;
     padding: 1px 10px;
     margin: 5px 3px 5px 3px;
 }
@@ -272,12 +274,12 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #pulseaudio {
-    color: #E0C677;
+    color: @yellow;
     padding: 1px 10px;
     margin: 5px 3px 5px 0px;
 }
 #pulseaudio.muted {
-    color: #3b4252;
+    color: @outline;
 }
 
 

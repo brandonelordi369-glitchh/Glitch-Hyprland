@@ -1,0 +1,34 @@
+/*
+ * Css Colors
+ * Generated with Matugen
+ */
+<* for name, value in colors *>
+@define-color {{name}} {{value.default.hex}};
+<* endfor *>
+
+@define-color textcolor1 @on_primary;
+@define-color textcolor2 @on_surface;
+/*@define-color backgroundlight @surface_container;*/
+@define-color iconcolor @primary;
+
+/* Compatibility with old existing Waybar CSS */
+@define-color base @background;
+@define-color mantle @surface_container;
+@define-color crust @background;
+@define-color text @on_background;
+@define-color subtext0 @on_surface;
+@define-color subtext1 @on_surface;
+@define-color surface0 @surface_container;
+@define-color surface1 @surface;
+@define-color surface2 @outline_variant;
+@define-color blue @secondary;
+@define-color lavender @primary;
+@define-color teal @tertiary;
+@define-color green @tertiary;
+@define-color yellow @secondary;
+@define-color peach @tertiary;
+@define-color red @error;
+@define-color mauve @primary;
+@define-color pink @secondary;
+@define-color flamingo @tertiary;
+@define-color rosewater @tertiary;

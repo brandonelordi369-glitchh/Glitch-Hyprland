@@ -7,18 +7,22 @@ fastfetch config By Brandon Elordi...
   //   "source": "\"$(fastfetch.sh logo)\"",
   //   "height": 18
   // },
-  // "logo": {
-  //   "source": "/home/halcyon/.config/fastfetch/archhyde.png",
-  //   "height": 18
-  // },
+  "logo": {
+    "type": "kitty-direct",
+    "source": "~/.config/fastfetch/Akuma5.png",
+    "height": 17,
+    "width": 38
+  },
   "display": {
     "separator": " : "
   },
   "modules": [
     {
       "type": "title",
-      "key": "  ",
-      "format": "{6} {7} {8}"
+      "key": "   ",
+      // "format": "{6} {7} {8}",
+      "format": "{#magenta}{1} {#red}@ {#magenta}{2}",
+      "keyColor": "magenta"
     },
     {
       "type": "custom",

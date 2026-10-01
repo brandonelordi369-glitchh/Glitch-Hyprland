@@ -1,111 +1,124 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
-  "ignore-gtk-theme": true,
   "positionX": "right",
   "positionY": "top",
-  "layer": "overlay",
-  "control-center-layer": "top",
-  "layer-shell": true,
-  "layer-shell-cover-screen": true,
   "cssPriority": "user",
-  "control-center-margin-top": 7,
-  "control-center-margin-bottom": 0,
-  "control-center-margin-right": 7,
+  "control-center-width": 400,
+  "control-center-height": 860,
+  "control-center-margin-top": 2,
+  "control-center-margin-bottom": 2,
+  "control-center-margin-right": 1,
   "control-center-margin-left": 0,
-  "notification-2fa-action": true,
-  "notification-inline-replies": false,
-  "notification-body-image-height": 100,
-  "notification-body-image-width": 500,
-  "timeout": 5,
-  "timeout-low": 5,
-  "timeout-critical": 0,
+
+  "notification-window-width": 400,
+  "notification-icon-size": 48,
+  "notification-body-image-height": 160,
+  "notification-body-image-width": 200,
+
+  "timeout": 4,
+  "timeout-low": 2,
+  "timeout-critical": 6,
+
   "fit-to-screen": false,
-  "relative-timestamps": true,
-  "control-center-width": 350,
-  "control-center-height": 600,
-  "notification-window-width": 350,
   "keyboard-shortcuts": true,
-  "notification-grouping": true,
   "image-visibility": "when-available",
   "transition-time": 200,
   "hide-on-clear": false,
-  "hide-on-action": true,
-  "text-empty": "No Notifications",
+  "hide-on-action": false,
   "script-fail-notify": true,
-
   "scripts": {
-  "screenshot-action-script": {
-    "exec": "bash ~/.config/scripts/swaync-shot.sh open",
-    "app-name": "Screenshot",
-    "urgency": "Normal",
-    "run-on": "action"
-  }
+    "example-script": {
+      "exec": "echo 'Do something...'",
+      "urgency": "Normal"
+    }
   },
-
   "notification-visibility": {
     "example-name": {
-      "state": "muted",
+      "state": "visible",
       "urgency": "Low",
       "app-name": "Spotify"
     }
   },
-
   "widgets": [
+    "label",
+    "buttons-grid",
+    "volume",
+    "backlight",
     "mpris",
     "title",
-    "notifications",
-    "buttons-grid"
+    "dnd",
+    "notifications"
   ],
-
   "widget-config": {
-    "notifications": {
-      "vexpand": true
-    },
-    "inhibitors": {
-      "text": "Inhibitors",
-      "button-text": "Clear All",
-      "clear-all-button": true
-    },
     "title": {
       "text": "Notifications",
       "clear-all-button": true,
-      "button-text": "Clear All"
+      "button-text": " 󰎟 "
     },
     "dnd": {
-      "text": "Do Not Disturb"
+      "text": "Do not disturb"
     },
     "label": {
-      "max-lines": 5,
-      "text": "Label Text"
+      "max-lines": 1,
+      "text": "󰬚󰬞󰬈󰬠󰬕󰬊"
     },
     "mpris": {
-      "blacklist": [],
-      "autohide": false,
-      "show-album-art": "always",
-      "loop-carousel": false
+      "image-size": 96,
+      "image-radius": 12
+    },
+    "volume": {
+      "label": "󰕾 ",
+      "show-per-app": false
+    },
+    "backlight": {
+      "label": "󰃟 ",
+      "device": "amdgpu_bl2"
     },
     "buttons-grid": {
-      "buttons-per-row": 6,
       "actions": [
         {
-          "label": "",
-          "type": "button",
-          "command": "swaync-client --close-panel && sleep 0.7 && color=$(hyprpicker -a -f hex) && notify-send -a 'Hyprpicker' '🎨 Color copied!' $color"
+          "label": "󰖁",
+          "command": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+          "type": "toggle"
         },
-
-
         {
-          "label": "",
-          "type": "button",
-          "command": "swaync-client --close-panel && kitty --class wifibt -e bluetuith"
+          "label": "󰍭",
+          "command": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+	  "type": "toggle"
         },
-
         {
-          "label": "",
-          "type": "toggle",
-          "command": "sh -c 'swaync-client --toggle-dnd'",
-          "update-command": "sh -c 'out=$(swaync-client -D 2>/dev/null); [[ $out == true || $(echo \"$out\" | jq -r .doNotDisturb 2>/dev/null) == true ]] && echo true || echo false'"
-        }
+          "label": "󰤨",
+          "command": "nm-connection-editor"
+        },
+        {
+          "label": "󰂯",
+          "command": "blueman-manager"
+        },
+        {
+          "label": "",
+          "command": "nwg-look"
+        },
+        {
+          "label": "󰻂",
+          "command": "obs"
+        },
+	{
+	  "label": "󰌾",
+	  "command": "hyprlock"
+	},
+	{
+	  "label":"󰜉",
+	  "command": "reboot"
+	},
+	{
+	  "label":"󰐥",
+	  "command": "shutdown now"
+	},
+	{
+	  "label":"󰀝",
+	  "command": "bash -c $HOME/.config/hypr/scripts/airplaneMode.sh",
+	  "type": "toggle"
+	}
       ]
     }
   }

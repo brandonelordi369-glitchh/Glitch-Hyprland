@@ -8,7 +8,7 @@
 ; mode = normal
 
 # Accepts only non-negative values.
-; framerate = 75
+framerate = 75
 
 # 'autosens' will attempt to decrease sensitivity if the bars peak. 1 = on, 0 = off
 # new as of 0.6.0 autosens of low values (dynamic range)
@@ -256,12 +256,14 @@
 ; gradient_color_6 = '#cc8033'
 ; gradient_color_7 = '#cc5933'
 ; gradient_color_8 = '#cc3333'
-gradient = 1
 
-gradient_color_1 = '#8FBCBB'  # Nord7 (Cyan Accent)
-gradient_color_2 = '#88C0D0'  # Nord8 (Blue Accent)
-gradient_color_3 = '#81A1C1'  # Nord9 (Secondary Blue Accent)
-gradient_color_4 = '#5E81AC'  # Nord10 (Dark Blue Accent)
+
+;gradient = 1
+
+;gradient_color_1 = '#8FBCBB'  # Nord7 (Cyan Accent)
+;gradient_color_2 = '#88C0D0'  # Nord8 (Blue Accent)
+;gradient_color_3 = '#81A1C1'  # Nord9 (Secondary Blue Accent)
+;gradient_color_4 = '#5E81AC'  # Nord10 (Dark Blue Accent)
 
 
 # Horizontal is only supported on noncurses output.
@@ -285,7 +287,7 @@ gradient_color_4 = '#5E81AC'  # Nord10 (Dark Blue Accent)
 
 # use theme file instead of defining colors in this file
 # themes are located in $HOME/.config/cava/themes
-; theme = 'none'
+theme = 'matugen'
 
 
 [smoothing]

@@ -31,3 +31,10 @@ if [ -f "$HYPRLOCK_CONF" ] && grep -q "background {" "$HYPRLOCK_CONF" 2>/dev/nul
 else
     echo "AWG: $IMAGE_PATH (wallpaper only; hyprlock.conf missing or has no background block)"
 fi
+
+# Matugen color generation
+if command -v matugen >/dev/null 2>&1; then
+    matugen image "$IMAGE_PATH" --mode dark --source-color-index 0
+else
+    print -u2 "AWG: matugen not found — only wallpaper changed"
+fi

@@ -27,12 +27,14 @@ hl.layer_rule({
     match = { namespace = "swaync-control-center" },
     animation    = "slide right",
     blur         = true,
-    ignore_alpha = 0,
+    ignore_alpha = 0.5,
+    ignore_zero   = on,
 })
 
 hl.layer_rule({
     name  = "swaync-window",
     match = { namespace = "swaync-notification-window" },
     blur         = true,
-    ignore_alpha = 0,
+    ignore_alpha = 0.5,
+    ignore_zero   = on,
 })

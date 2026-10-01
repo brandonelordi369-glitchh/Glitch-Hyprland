@@ -1,3 +1,5 @@
+local colors = require("generated.hyprland-colors")
+
 -- LOOK AND FEEL
 hl.config({
     general = {
@@ -5,8 +7,8 @@ hl.config({
         gaps_out    = 10,
         border_size = 2,
         col = {
-            active_border   = { colors = {"rgba(00d2d3ee)", "rgba(00a8ffee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            active_border   = { colors = {colors.primary, colors.tertiary}, angle = 45 },
+            inactive_border = colors.surface,
         },
         resize_on_border = false,
         allow_tearing    = false,
@@ -28,10 +30,11 @@ hl.config({
 
         blur = {
             enabled         = true,
-            size            = 6,
-            passes          = 3,
+            size            = 6, --6
+            passes          = 2, --3
             ignore_opacity  = true,
             contrast        = 1.3,
+            -- noise           = 0.03,
             xray            = false,
             new_optimizations = true,
         },

@@ -1,1 +1,3 @@
-@import 'themes/transparent.css';
+@import 'generated/matugen-swaync.css';
+@import 'themes/matugen-nc/notifications.css';
+@import 'themes/matugen-nc/control-center.css';
